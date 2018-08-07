@@ -21,6 +21,9 @@ public:
 	void DownInverted();
 	void main();
 private:
+	void clockwise(int face);
+	void inverted(int face);
+private:
 	Face faces[6];
 };
 

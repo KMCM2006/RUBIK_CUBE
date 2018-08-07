@@ -13,23 +13,14 @@ void Cube::ShowCube()
 	for (int i = 0; i < 6; i++)
 	{
 		faces[i].ShowFace();
-		cout << endl << endl;
 	}
 }
 
 void Cube::LeftClockwise()
 {
 	char up[3], right[3], down[3], left[3];
-
-	faces[LEFT].GetUp(up);
-	faces[LEFT].GetRight(right);
-	faces[LEFT].GetDown(down);
-	faces[LEFT].GetLeft(left);
 	
-	faces[LEFT].ReplaceUp(left);
-	faces[LEFT].ReplaceRight(up);
-	faces[LEFT].ReplaceDown(right);
-	faces[LEFT].ReplaceLeft(down);
+	clockwise(LEFT);
 
 	faces[UP].GetLeft(up);
 	faces[FRONT].GetLeft(right);
@@ -46,15 +37,7 @@ void Cube::LeftInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[LEFT].GetUp(up);
-	faces[LEFT].GetRight(right);
-	faces[LEFT].GetDown(down);
-	faces[LEFT].GetLeft(left);
-
-	faces[LEFT].ReplaceUp(right);
-	faces[LEFT].ReplaceRight(down);
-	faces[LEFT].ReplaceDown(left);
-	faces[LEFT].ReplaceLeft(up);
+	inverted(LEFT);
 
 	faces[UP].GetLeft(up);
 	faces[FRONT].GetLeft(right);
@@ -71,15 +54,7 @@ void Cube::FrontClockwise()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[FRONT].GetUp(up);
-	faces[FRONT].GetRight(right);
-	faces[FRONT].GetDown(down);
-	faces[FRONT].GetLeft(left);
-
-	faces[FRONT].ReplaceUp(left);
-	faces[FRONT].ReplaceRight(up);
-	faces[FRONT].ReplaceDown(right);
-	faces[FRONT].ReplaceLeft(down);
+	clockwise(FRONT);
 
 	faces[UP].GetDown(up);
 	faces[RIGHT].GetLeft(right);
@@ -96,15 +71,7 @@ void Cube::FrontInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[FRONT].GetUp(up);
-	faces[FRONT].GetRight(right);
-	faces[FRONT].GetDown(down);
-	faces[FRONT].GetLeft(left);
-
-	faces[FRONT].ReplaceUp(right);
-	faces[FRONT].ReplaceRight(down);
-	faces[FRONT].ReplaceDown(left);
-	faces[FRONT].ReplaceLeft(up);
+	inverted(FRONT);
 
 	faces[UP].GetDown(up);
 	faces[RIGHT].GetLeft(right);
@@ -121,15 +88,7 @@ void Cube::RightClockwise()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[RIGHT].GetUp(up);
-	faces[RIGHT].GetRight(right);
-	faces[RIGHT].GetDown(down);
-	faces[RIGHT].GetLeft(left);
-
-	faces[RIGHT].ReplaceUp(left);
-	faces[RIGHT].ReplaceRight(up);
-	faces[RIGHT].ReplaceDown(right);
-	faces[RIGHT].ReplaceLeft(down);
+	clockwise(RIGHT);
 
 	faces[UP].GetDown(up);
 	faces[BACK].GetLeft(right);
@@ -146,15 +105,7 @@ void Cube::RightInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[RIGHT].GetUp(up);
-	faces[RIGHT].GetRight(right);
-	faces[RIGHT].GetDown(down);
-	faces[RIGHT].GetLeft(left);
-
-	faces[RIGHT].ReplaceUp(right);
-	faces[RIGHT].ReplaceRight(down);
-	faces[RIGHT].ReplaceDown(left);
-	faces[RIGHT].ReplaceLeft(up);
+	inverted(RIGHT);
 
 	faces[UP].GetRight(up);
 	faces[BACK].GetLeft(right);
@@ -171,15 +122,7 @@ void Cube::BackClockwise()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[BACK].GetUp(up);
-	faces[BACK].GetRight(right);
-	faces[BACK].GetDown(down);
-	faces[BACK].GetLeft(left);
-
-	faces[BACK].ReplaceUp(left);
-	faces[BACK].ReplaceRight(up);
-	faces[BACK].ReplaceDown(right);
-	faces[BACK].ReplaceLeft(down);
+	clockwise(BACK);
 
 	faces[UP].GetUp(up);
 	faces[LEFT].GetLeft(right);
@@ -196,15 +139,7 @@ void Cube::BackInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[BACK].GetUp(up);
-	faces[BACK].GetRight(right);
-	faces[BACK].GetDown(down);
-	faces[BACK].GetLeft(left);
-
-	faces[BACK].ReplaceUp(right);
-	faces[BACK].ReplaceRight(down);
-	faces[BACK].ReplaceDown(left);
-	faces[BACK].ReplaceLeft(up);
+	inverted(BACK);
 
 	faces[UP].GetUp(up);
 	faces[LEFT].GetLeft(right);
@@ -221,15 +156,7 @@ void Cube::UpClockwise()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[UP].GetUp(up);
-	faces[UP].GetRight(right);
-	faces[UP].GetDown(down);
-	faces[UP].GetLeft(left);
-
-	faces[UP].ReplaceUp(left);
-	faces[UP].ReplaceRight(up);
-	faces[UP].ReplaceDown(right);
-	faces[UP].ReplaceLeft(down);
+	clockwise(UP);
 
 	faces[BACK].GetUp(up);
 	faces[RIGHT].GetUp(right);
@@ -246,15 +173,7 @@ void Cube::UpInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[UP].GetUp(up);
-	faces[UP].GetRight(right);
-	faces[UP].GetDown(down);
-	faces[UP].GetLeft(left);
-
-	faces[UP].ReplaceUp(right);
-	faces[UP].ReplaceRight(down);
-	faces[UP].ReplaceDown(left);
-	faces[UP].ReplaceLeft(up);
+	inverted(UP);
 
 	faces[BACK].GetUp(up);
 	faces[RIGHT].GetUp(right);
@@ -271,15 +190,7 @@ void Cube::DownClockwise()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[DOWN].GetUp(up);
-	faces[DOWN].GetRight(right);
-	faces[DOWN].GetDown(down);
-	faces[DOWN].GetLeft(left);
-
-	faces[DOWN].ReplaceUp(left);
-	faces[DOWN].ReplaceRight(up);
-	faces[DOWN].ReplaceDown(right);
-	faces[DOWN].ReplaceLeft(down);
+	clockwise(DOWN);
 
 	faces[FRONT].GetDown(up);
 	faces[RIGHT].GetDown(right);
@@ -296,15 +207,7 @@ void Cube::DownInverted()
 {
 	char up[3], right[3], down[3], left[3];
 
-	faces[DOWN].GetUp(up);
-	faces[DOWN].GetRight(right);
-	faces[DOWN].GetDown(down);
-	faces[DOWN].GetLeft(left);
-
-	faces[DOWN].ReplaceUp(right);
-	faces[DOWN].ReplaceRight(down);
-	faces[DOWN].ReplaceDown(left);
-	faces[DOWN].ReplaceLeft(up);
+	inverted(DOWN);
 
 	faces[FRONT].GetDown(up);
 	faces[RIGHT].GetDown(right);
@@ -388,4 +291,34 @@ void Cube::main()
 		}
 	}while (option != 13);
 
+}
+
+void Cube::clockwise(int face)
+{
+	char up[3], right[3], down[3], left[3];
+
+	faces[face].GetUp(up);
+	faces[face].GetRight(right);
+	faces[face].GetDown(down);
+	faces[face].GetLeft(left);
+
+	faces[face].ReplaceUp(left);
+	faces[face].ReplaceRight(up);
+	faces[face].ReplaceDown(right);
+	faces[face].ReplaceLeft(down);
+}
+
+void Cube::inverted(int face)
+{
+	char up[3], right[3], down[3], left[3];
+
+	faces[face].GetUp(up);
+	faces[face].GetRight(right);
+	faces[face].GetDown(down);
+	faces[face].GetLeft(left);
+
+	faces[face].ReplaceUp(right);
+	faces[face].ReplaceRight(down);
+	faces[face].ReplaceDown(left);
+	faces[face].ReplaceLeft(up);
 }
