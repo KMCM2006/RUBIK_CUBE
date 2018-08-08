@@ -18,8 +18,6 @@ void Cube::ShowCube()
 
 void Cube::LeftClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-	
 	clockwise(LEFT);
 
 	faces[UP].GetLeft(up);
@@ -35,8 +33,6 @@ void Cube::LeftClockwise()
 
 void Cube::LeftInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(LEFT);
 
 	faces[UP].GetLeft(up);
@@ -52,8 +48,6 @@ void Cube::LeftInverted()
 
 void Cube::FrontClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-
 	clockwise(FRONT);
 
 	faces[UP].GetDown(up);
@@ -69,8 +63,6 @@ void Cube::FrontClockwise()
 
 void Cube::FrontInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(FRONT);
 
 	faces[UP].GetDown(up);
@@ -86,8 +78,6 @@ void Cube::FrontInverted()
 
 void Cube::RightClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-
 	clockwise(RIGHT);
 
 	faces[UP].GetDown(up);
@@ -103,8 +93,6 @@ void Cube::RightClockwise()
 
 void Cube::RightInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(RIGHT);
 
 	faces[UP].GetRight(up);
@@ -120,8 +108,6 @@ void Cube::RightInverted()
 
 void Cube::BackClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-
 	clockwise(BACK);
 
 	faces[UP].GetUp(up);
@@ -137,8 +123,6 @@ void Cube::BackClockwise()
 
 void Cube::BackInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(BACK);
 
 	faces[UP].GetUp(up);
@@ -154,8 +138,6 @@ void Cube::BackInverted()
 
 void Cube::UpClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-
 	clockwise(UP);
 
 	faces[BACK].GetUp(up);
@@ -171,8 +153,6 @@ void Cube::UpClockwise()
 
 void Cube::UpInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(UP);
 
 	faces[BACK].GetUp(up);
@@ -188,8 +168,6 @@ void Cube::UpInverted()
 
 void Cube::DownClockwise()
 {
-	char up[3], right[3], down[3], left[3];
-
 	clockwise(DOWN);
 
 	faces[FRONT].GetDown(up);
@@ -205,8 +183,6 @@ void Cube::DownClockwise()
 
 void Cube::DownInverted()
 {
-	char up[3], right[3], down[3], left[3];
-
 	inverted(DOWN);
 
 	faces[FRONT].GetDown(up);
@@ -295,12 +271,7 @@ void Cube::main()
 
 void Cube::clockwise(int face)
 {
-	char up[3], right[3], down[3], left[3];
-
-	faces[face].GetUp(up);
-	faces[face].GetRight(right);
-	faces[face].GetDown(down);
-	faces[face].GetLeft(left);
+	updateFaces(face);
 
 	faces[face].ReplaceUp(left);
 	faces[face].ReplaceRight(up);
@@ -310,15 +281,18 @@ void Cube::clockwise(int face)
 
 void Cube::inverted(int face)
 {
-	char up[3], right[3], down[3], left[3];
-
-	faces[face].GetUp(up);
-	faces[face].GetRight(right);
-	faces[face].GetDown(down);
-	faces[face].GetLeft(left);
+	updateFaces(face);
 
 	faces[face].ReplaceUp(right);
 	faces[face].ReplaceRight(down);
 	faces[face].ReplaceDown(left);
 	faces[face].ReplaceLeft(up);
+}
+
+void Cube::updateFaces(int face)
+{
+	faces[face].GetUp(up);
+	faces[face].GetRight(right);
+	faces[face].GetDown(down);
+	faces[face].GetLeft(left);
 }

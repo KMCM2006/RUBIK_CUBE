@@ -23,8 +23,10 @@ public:
 private:
 	void clockwise(int face);
 	void inverted(int face);
+	void updateFaces(int face);
 private:
 	Face faces[6];
+	char up[3], right[3], down[3], left[3];
 };
 
 #endif // !CUBE_H
