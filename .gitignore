@@ -3,6 +3,8 @@
 /.vs
 /Debug
 /Release
+/RUBIK_CUBE_(C++)/Debug
+/RUBIK_CUBE_(C++)/Release
 # Compiled Object files
 *.slo
 *.lo
