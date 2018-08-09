@@ -40,35 +40,67 @@ Face::~Face()
 {
 }
 
-void Face::ReplaceUp(char sticker[3])
+void Face::ReplaceUp(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		stickers[0][i] = sticker[i];
+		stickers[0][0] = sticker[0];
+		stickers[0][1] = sticker[1];
+		stickers[0][2] = sticker[2];
+	}
+	else
+	{
+		stickers[0][2] = sticker[0];
+		stickers[0][1] = sticker[1];
+		stickers[0][0] = sticker[2];
 	}
 }
 
-void Face::ReplaceDown(char sticker[3])
+void Face::ReplaceDown(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		stickers[2][i] = sticker[i];
+		stickers[2][0] = sticker[0];
+		stickers[2][1] = sticker[1];
+		stickers[2][2] = sticker[2];
+	}
+	else
+	{
+		stickers[2][2] = sticker[0];
+		stickers[2][1] = sticker[1];
+		stickers[2][0] = sticker[2];
 	}
 }
 
-void Face::ReplaceLeft(char sticker[3])
+void Face::ReplaceLeft(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		stickers[i][0] = sticker[i];
+		stickers[0][0] = sticker[0];
+		stickers[1][0] = sticker[1];
+		stickers[2][0] = sticker[2];
+	}
+	else
+	{
+		stickers[2][0] = sticker[0];
+		stickers[1][0] = sticker[1];
+		stickers[0][0] = sticker[2];
 	}
 }
 
-void Face::ReplaceRight(char sticker[3])
+void Face::ReplaceRight(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		stickers[i][2] = sticker[i];
+		stickers[0][2] = sticker[0];
+		stickers[1][2] = sticker[1];
+		stickers[2][2] = sticker[2];
+	}
+	else
+	{
+		stickers[2][2] = sticker[0];
+		stickers[1][2] = sticker[1];
+		stickers[0][2] = sticker[2];
 	}
 }
 
@@ -83,35 +115,67 @@ void Face::ShowFace()
 	}
 }
 
-void Face::GetUp(char sticker[3])
+void Face::GetUp(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		sticker[i] = stickers[0][i];
+		sticker[0] = stickers[0][0];
+		sticker[1] = stickers[0][1];
+		sticker[2] = stickers[0][2];
+	}
+	else
+	{
+		sticker[0] = stickers[0][2];
+		sticker[1] = stickers[0][1];
+		sticker[2] = stickers[0][0];
 	}
 }
 
-void Face::GetDown(char sticker[3])
+void Face::GetDown(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		sticker[i] = stickers[2][i];
+		sticker[0] = stickers[2][0];
+		sticker[1] = stickers[2][1];
+		sticker[2] = stickers[2][2];
+	}
+	else
+	{
+		sticker[0] = stickers[2][2];
+		sticker[1] = stickers[2][1];
+		sticker[2] = stickers[2][0];
 	}
 }
 
-void Face::GetLeft(char sticker[3])
+void Face::GetLeft(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		sticker[i] = stickers[i][0];
+		sticker[0] = stickers[0][0];
+		sticker[1] = stickers[1][0];
+		sticker[2] = stickers[2][0];
+	}
+	else
+	{
+		sticker[0] = stickers[2][0];
+		sticker[1] = stickers[1][0];
+		sticker[2] = stickers[0][0];
 	}
 }
 
-void Face::GetRight(char sticker[3])
+void Face::GetRight(char sticker[3], char rotation)
 {
-	for (int i = 0; i < 3; i++)
+	if (rotation == 'C')
 	{
-		sticker[i] = stickers[i][2];
+		sticker[0] = stickers[0][2];
+		sticker[1] = stickers[1][2];
+		sticker[2] = stickers[2][2];
+	}
+	else
+	{
+		sticker[0] = stickers[2][2];
+		sticker[1] = stickers[1][2];
+		sticker[2] = stickers[0][2];
 	}
 }
 

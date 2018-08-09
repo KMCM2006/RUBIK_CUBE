@@ -8,15 +8,15 @@ class Face
 public:
 	Face(Color color, short position_x, short position_y);
 	~Face();
-	void ReplaceUp(char sticker[3]);
-	void ReplaceDown(char sticker[3]);
-	void ReplaceLeft(char sticker[3]);
-	void ReplaceRight(char sticker[3]);
+	void ReplaceUp(char sticker[3], char rotation);
+	void ReplaceDown(char sticker[3], char rotation);
+	void ReplaceLeft(char sticker[3], char rotation);
+	void ReplaceRight(char sticker[3], char rotation);
 	void ShowFace();
-	void GetUp(char sticker[3]);
-	void GetDown(char sticker[3]);
-	void GetLeft(char sticker[3]);
-	void GetRight(char sticker[3]);
+	void GetUp(char sticker[3], char rotation);
+	void GetDown(char sticker[3], char rotation);
+	void GetLeft(char sticker[3], char rotation);
+	void GetRight(char sticker[3], char rotation);
 private:
 	void PrintSticker(int row, int col);
 private:
