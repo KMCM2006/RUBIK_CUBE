@@ -2,9 +2,16 @@
 *.d
 /.vs
 /Debug
-/Release
-/RUBIK_CUBE_(C++)/Debug
-/RUBIK_CUBE_(C++)/Release
+/Release[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 # Compiled Object files
 *.slo
 *.lo
