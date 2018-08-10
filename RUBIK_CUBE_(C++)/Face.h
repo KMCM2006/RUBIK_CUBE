@@ -8,19 +8,19 @@ class Face
 public:
 	Face(Color color, short position_x, short position_y);
 	~Face();
-	void SetUp(char sticker[3], char rotation);
-	void SetDown(char sticker[3], char rotation);
-	void SetLeft(char sticker[3], char rotation);
-	void SetRight(char sticker[3], char rotation);
+	void SetUp(char _pieces[3], char rotation);
+	void SetDown(char _pieces[3], char rotation);
+	void SetLeft(char _pieces[3], char rotation);
+	void SetRight(char _pieces[3], char rotation);
 	void ShowFace();
-	void GetUp(char sticker[3], char rotation);
-	void GetDown(char sticker[3], char rotation);
-	void GetLeft(char sticker[3], char rotation);
-	void GetRight(char sticker[3], char rotation);
+	void GetUp(char _pieces[3], char rotation);
+	void GetDown(char _pieces[3], char rotation);
+	void GetLeft(char _pieces[3], char rotation);
+	void GetRight(char _pieces[3], char rotation);
 private:
-	void PrintSticker(int row, int col);
+	void PrintPiece(int row, int col);
 private:
-	char stickers[3][3];
+	char pieces[3][3];
 	short position_x, position_y;
 };
 

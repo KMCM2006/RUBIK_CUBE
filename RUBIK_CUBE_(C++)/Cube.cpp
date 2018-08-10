@@ -227,7 +227,6 @@ void Cube::Clockwise(int face)
 	faces[face].GetRight(right, 'C');
 	faces[face].GetDown(down, 'I');
 	faces[face].GetLeft(left, 'I');
-
 	faces[face].SetUp(left, 'C');
 	faces[face].SetRight(up, 'C');
 	faces[face].SetDown(right, 'I');
@@ -240,7 +239,6 @@ void Cube::Inverted(int face)
 	faces[face].GetRight(right, 'I');
 	faces[face].GetDown(down, 'C');
 	faces[face].GetLeft(left, 'C');
-
 	faces[face].SetUp(right, 'I');
 	faces[face].SetRight(down, 'I');
 	faces[face].SetDown(left, 'C');

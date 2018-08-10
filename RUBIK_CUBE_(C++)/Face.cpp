@@ -4,33 +4,33 @@ Face::Face(Color color, short position_x, short position_y)
 {
 	this->position_x = position_x;
 	this->position_y = position_y;
-	char value_sticker;
+	char value_piece;
 	switch (color)
 	{
 	case BLUE:
-		value_sticker = 'B';
+		value_piece = 'B';
 		break;
 	case GREEN:
-		value_sticker = 'G';
+		value_piece = 'G';
 		break;
 	case RED:
-		value_sticker = 'R';
+		value_piece = 'R';
 		break;
 	case ORANGE:
-		value_sticker = 'O';
+		value_piece = 'O';
 		break;
 	case YELLOW:
-		value_sticker = 'Y';
+		value_piece = 'Y';
 		break;
 	case WHITE:
-		value_sticker = 'W';
+		value_piece = 'W';
 		break;
 	}
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			stickers[i][j] = value_sticker;
+			pieces[i][j] = value_piece;
 		}
 	}
 }
@@ -40,67 +40,67 @@ Face::~Face()
 {
 }
 
-void Face::SetUp(char sticker[3], char rotation)
+void Face::SetUp(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		stickers[0][0] = sticker[0];
-		stickers[0][1] = sticker[1];
-		stickers[0][2] = sticker[2];
+		pieces[0][0] = _pieces[0];
+		pieces[0][1] = _pieces[1];
+		pieces[0][2] = _pieces[2];
 	}
 	else
 	{
-		stickers[0][2] = sticker[0];
-		stickers[0][1] = sticker[1];
-		stickers[0][0] = sticker[2];
+		pieces[0][2] = _pieces[0];
+		pieces[0][1] = _pieces[1];
+		pieces[0][0] = _pieces[2];
 	}
 }
 
-void Face::SetDown(char sticker[3], char rotation)
+void Face::SetDown(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		stickers[2][0] = sticker[0];
-		stickers[2][1] = sticker[1];
-		stickers[2][2] = sticker[2];
+		pieces[2][0] = _pieces[0];
+		pieces[2][1] = _pieces[1];
+		pieces[2][2] = _pieces[2];
 	}
 	else
 	{
-		stickers[2][2] = sticker[0];
-		stickers[2][1] = sticker[1];
-		stickers[2][0] = sticker[2];
+		pieces[2][2] = _pieces[0];
+		pieces[2][1] = _pieces[1];
+		pieces[2][0] = _pieces[2];
 	}
 }
 
-void Face::SetLeft(char sticker[3], char rotation)
+void Face::SetLeft(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		stickers[0][0] = sticker[0];
-		stickers[1][0] = sticker[1];
-		stickers[2][0] = sticker[2];
+		pieces[0][0] = _pieces[0];
+		pieces[1][0] = _pieces[1];
+		pieces[2][0] = _pieces[2];
 	}
 	else
 	{
-		stickers[2][0] = sticker[0];
-		stickers[1][0] = sticker[1];
-		stickers[0][0] = sticker[2];
+		pieces[2][0] = _pieces[0];
+		pieces[1][0] = _pieces[1];
+		pieces[0][0] = _pieces[2];
 	}
 }
 
-void Face::SetRight(char sticker[3], char rotation)
+void Face::SetRight(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		stickers[0][2] = sticker[0];
-		stickers[1][2] = sticker[1];
-		stickers[2][2] = sticker[2];
+		pieces[0][2] = _pieces[0];
+		pieces[1][2] = _pieces[1];
+		pieces[2][2] = _pieces[2];
 	}
 	else
 	{
-		stickers[2][2] = sticker[0];
-		stickers[1][2] = sticker[1];
-		stickers[0][2] = sticker[2];
+		pieces[2][2] = _pieces[0];
+		pieces[1][2] = _pieces[1];
+		pieces[0][2] = _pieces[2];
 	}
 }
 
@@ -110,80 +110,80 @@ void Face::ShowFace()
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			PrintSticker(i, j);
+			PrintPiece(i, j);
 		}
 	}
 }
 
-void Face::GetUp(char sticker[3], char rotation)
+void Face::GetUp(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		sticker[0] = stickers[0][0];
-		sticker[1] = stickers[0][1];
-		sticker[2] = stickers[0][2];
+		_pieces[0] = pieces[0][0];
+		_pieces[1] = pieces[0][1];
+		_pieces[2] = pieces[0][2];
 	}
 	else
 	{
-		sticker[0] = stickers[0][2];
-		sticker[1] = stickers[0][1];
-		sticker[2] = stickers[0][0];
+		_pieces[0] = pieces[0][2];
+		_pieces[1] = pieces[0][1];
+		_pieces[2] = pieces[0][0];
 	}
 }
 
-void Face::GetDown(char sticker[3], char rotation)
+void Face::GetDown(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		sticker[0] = stickers[2][0];
-		sticker[1] = stickers[2][1];
-		sticker[2] = stickers[2][2];
+		_pieces[0] = pieces[2][0];
+		_pieces[1] = pieces[2][1];
+		_pieces[2] = pieces[2][2];
 	}
 	else
 	{
-		sticker[0] = stickers[2][2];
-		sticker[1] = stickers[2][1];
-		sticker[2] = stickers[2][0];
+		_pieces[0] = pieces[2][2];
+		_pieces[1] = pieces[2][1];
+		_pieces[2] = pieces[2][0];
 	}
 }
 
-void Face::GetLeft(char sticker[3], char rotation)
+void Face::GetLeft(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		sticker[0] = stickers[0][0];
-		sticker[1] = stickers[1][0];
-		sticker[2] = stickers[2][0];
+		_pieces[0] = pieces[0][0];
+		_pieces[1] = pieces[1][0];
+		_pieces[2] = pieces[2][0];
 	}
 	else
 	{
-		sticker[0] = stickers[2][0];
-		sticker[1] = stickers[1][0];
-		sticker[2] = stickers[0][0];
+		_pieces[0] = pieces[2][0];
+		_pieces[1] = pieces[1][0];
+		_pieces[2] = pieces[0][0];
 	}
 }
 
-void Face::GetRight(char sticker[3], char rotation)
+void Face::GetRight(char _pieces[3], char rotation)
 {
 	if (rotation == 'C')
 	{
-		sticker[0] = stickers[0][2];
-		sticker[1] = stickers[1][2];
-		sticker[2] = stickers[2][2];
+		_pieces[0] = pieces[0][2];
+		_pieces[1] = pieces[1][2];
+		_pieces[2] = pieces[2][2];
 	}
 	else
 	{
-		sticker[0] = stickers[2][2];
-		sticker[1] = stickers[1][2];
-		sticker[2] = stickers[0][2];
+		_pieces[0] = pieces[2][2];
+		_pieces[1] = pieces[1][2];
+		_pieces[2] = pieces[0][2];
 	}
 }
 
 
-void Face::PrintSticker(int row, int col)
+void Face::PrintPiece(int row, int col)
 {
 	Color color;
-	switch (stickers[row][col])
+	switch (pieces[row][col])
 	{
 	case 'B':
 		color = BLUE;
@@ -206,5 +206,5 @@ void Face::PrintSticker(int row, int col)
 	}
 	setColor(color);
 	gotoxy(position_x + col, position_y + row);
-	cout << stickers[row][col];
+	cout << pieces[row][col];
 }
