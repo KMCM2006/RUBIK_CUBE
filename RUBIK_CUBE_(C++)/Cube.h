@@ -21,9 +21,14 @@ public:
 	void DownInverted();
 	void main();
 private:
-	void clockwise(int face);
-	void inverted(int face);
-	void updateFaces(int face);
+	void Clockwise(int face);
+	void Inverted(int face);
+	void LeftGenericRotation(char rotations[4]);
+	void FrontGenericRotation(char rotations[4]);
+	void RightGenericRotation(char rotations[4]);
+	void BackGenericRotation(char rotations[4]);
+	void UpGenericRotation(char rotations[4]);
+	void DownGenericRotation(char rotations[4]);
 private:
 	Face faces[6];
 	char up[3], right[3], down[3], left[3];

@@ -18,182 +18,206 @@ void Cube::ShowCube()
 
 void Cube::LeftClockwise()
 {
-	clockwise(LEFT);
+	Clockwise(LEFT);
 
-	faces[UP].GetLeft(up, 'C');
+	char rotations[4] = { 'C', 'C', 'C', 'I' };
+	LeftGenericRotation(rotations);
+	/*faces[UP].GetLeft(up, 'C');
 	faces[FRONT].GetLeft(right, 'C');
 	faces[DOWN].GetLeft(down, 'C');
-	faces[BACK].GetRight(left, 'I');
+	faces[BACK].GetRight(left, 'I');*/
 
-	faces[UP].ReplaceLeft(left, 'C');
-	faces[FRONT].ReplaceLeft(up, 'C');
-	faces[DOWN].ReplaceLeft(right, 'C');
-	faces[BACK].ReplaceRight(down, 'I');
+	faces[UP].SetLeft(left, 'C');
+	faces[FRONT].SetLeft(up, 'C');
+	faces[DOWN].SetLeft(right, 'C');
+	faces[BACK].SetRight(down, 'I');
 }
 
 void Cube::LeftInverted()
 {
-	inverted(LEFT);
+	Inverted(LEFT);
 
-	faces[UP].GetLeft(up, 'I');
+	char rotations[4] = { 'I', 'I', 'I', 'C' };
+	LeftGenericRotation(rotations);
+	/*faces[UP].GetLeft(up, 'I');
 	faces[FRONT].GetLeft(right, 'I');
 	faces[DOWN].GetLeft(down, 'I');
-	faces[BACK].GetRight(left, 'C');
+	faces[BACK].GetRight(left, 'C');*/
 
-	faces[UP].ReplaceLeft(right, 'I');
-	faces[FRONT].ReplaceLeft(down, 'I');
-	faces[DOWN].ReplaceLeft(left, 'I');
-	faces[BACK].ReplaceRight(up, 'C');
+	faces[UP].SetLeft(right, 'I');
+	faces[FRONT].SetLeft(down, 'I');
+	faces[DOWN].SetLeft(left, 'I');
+	faces[BACK].SetRight(up, 'C');
 }
 
 void Cube::FrontClockwise()
 {
-	clockwise(FRONT);
+	Clockwise(FRONT);
 
-	faces[UP].GetDown(up, 'C');
+	char rotations[4] = { 'C', 'C', 'I', 'I' };
+	FrontGenericRotation(rotations);
+	/*faces[UP].GetDown(up, 'C');
 	faces[RIGHT].GetLeft(right, 'C');
 	faces[DOWN].GetUp(down, 'I');
-	faces[LEFT].GetRight(left, 'I');
+	faces[LEFT].GetRight(left, 'I');*/
 
-	faces[UP].ReplaceDown(left, 'C');
-	faces[RIGHT].ReplaceLeft(up, 'C');
-	faces[DOWN].ReplaceUp(right, 'I');
-	faces[LEFT].ReplaceRight(down, 'I');
+	faces[UP].SetDown(left, 'C');
+	faces[RIGHT].SetLeft(up, 'C');
+	faces[DOWN].SetUp(right, 'I');
+	faces[LEFT].SetRight(down, 'I');
 }
 
 void Cube::FrontInverted()
 {
-	inverted(FRONT);
+	Inverted(FRONT);
 
-	faces[UP].GetDown(up, 'I');
+	char rotations[4] = { 'I', 'I', 'C', 'C' };
+	FrontGenericRotation(rotations);
+	/*faces[UP].GetDown(up, 'I');
 	faces[RIGHT].GetLeft(right, 'I');
 	faces[DOWN].GetUp(down, 'C');
-	faces[LEFT].GetRight(left, 'C');
+	faces[LEFT].GetRight(left, 'C');*/
 
-	faces[UP].ReplaceDown(right, 'I');
-	faces[RIGHT].ReplaceLeft(down, 'I');
-	faces[DOWN].ReplaceUp(left, 'C');
-	faces[LEFT].ReplaceRight(up, 'C');
+	faces[UP].SetDown(right, 'I');
+	faces[RIGHT].SetLeft(down, 'I');
+	faces[DOWN].SetUp(left, 'C');
+	faces[LEFT].SetRight(up, 'C');
 }
 
 void Cube::RightClockwise()
 {
-	clockwise(RIGHT);
+	Clockwise(RIGHT);
 
-	faces[UP].GetRight(up, 'I');
+	char rotations[4] = { 'I', 'C', 'I', 'I' };
+	RightGenericRotation(rotations);
+	/*faces[UP].GetRight(up, 'I');
 	faces[BACK].GetLeft(right, 'C');
 	faces[DOWN].GetRight(down, 'I');
-	faces[FRONT].GetRight(left, 'I');
+	faces[FRONT].GetRight(left, 'I');*/
 
-	faces[UP].ReplaceRight(left, 'I');
-	faces[BACK].ReplaceLeft(up, 'C');
-	faces[DOWN].ReplaceRight(right, 'I');
-	faces[FRONT].ReplaceRight(down, 'I');
+	faces[UP].SetRight(left, 'I');
+	faces[BACK].SetLeft(up, 'C');
+	faces[DOWN].SetRight(right, 'I');
+	faces[FRONT].SetRight(down, 'I');
 }
 
 void Cube::RightInverted()
 {
-	inverted(RIGHT);
+	Inverted(RIGHT);
 
-	faces[UP].GetRight(up, 'C');
+	char rotations[4] = { 'C', 'I', 'C', 'C' };
+	RightGenericRotation(rotations);
+	/*faces[UP].GetRight(up, 'C');
 	faces[BACK].GetLeft(right, 'I');
 	faces[DOWN].GetRight(down, 'C');
-	faces[FRONT].GetRight(left, 'C');
+	faces[FRONT].GetRight(left, 'C');*/
 
-	faces[UP].ReplaceRight(right, 'C');
-	faces[BACK].ReplaceLeft(down, 'I');
-	faces[DOWN].ReplaceRight(left, 'C');
-	faces[FRONT].ReplaceRight(up, 'C');
+	faces[UP].SetRight(right, 'C');
+	faces[BACK].SetLeft(down, 'I');
+	faces[DOWN].SetRight(left, 'C');
+	faces[FRONT].SetRight(up, 'C');
 }
 
 void Cube::BackClockwise()
 {
-	clockwise(BACK);
+	Clockwise(BACK);
 
-	faces[UP].GetUp(up, 'I');
+	char rotations[4] = { 'I', 'C', 'C', 'I' };
+	BackGenericRotation(rotations);
+	/*faces[UP].GetUp(up, 'I');
 	faces[LEFT].GetLeft(right, 'C');
 	faces[DOWN].GetDown(down, 'C');
-	faces[RIGHT].GetRight(left, 'I');
+	faces[RIGHT].GetRight(left, 'I');*/
 
-	faces[UP].ReplaceUp(left, 'I');
-	faces[LEFT].ReplaceLeft(up, 'C');
-	faces[DOWN].ReplaceDown(right, 'C');
-	faces[RIGHT].ReplaceRight(down, 'I');
+	faces[UP].SetUp(left, 'I');
+	faces[LEFT].SetLeft(up, 'C');
+	faces[DOWN].SetDown(right, 'C');
+	faces[RIGHT].SetRight(down, 'I');
 }
 
 void Cube::BackInverted()
 {
-	inverted(BACK);
+	Inverted(BACK);
 
-	faces[UP].GetUp(up, 'C');
+	char rotations[4] = { 'C', 'I', 'I', 'C' };
+	BackGenericRotation(rotations);
+	/*faces[UP].GetUp(up, 'C');
 	faces[LEFT].GetLeft(right, 'I');
 	faces[DOWN].GetDown(down, 'I');
-	faces[RIGHT].GetRight(left, 'C');
+	faces[RIGHT].GetRight(left, 'C');*/
 
-	faces[UP].ReplaceUp(right, 'C');
-	faces[LEFT].ReplaceLeft(down, 'I');
-	faces[DOWN].ReplaceDown(left, 'I');
-	faces[RIGHT].ReplaceRight(up, 'C');
+	faces[UP].SetUp(right, 'C');
+	faces[LEFT].SetLeft(down, 'I');
+	faces[DOWN].SetDown(left, 'I');
+	faces[RIGHT].SetRight(up, 'C');
 }
 
 void Cube::UpClockwise()
 {
-	clockwise(UP);
+	Clockwise(UP);
 
-	faces[BACK].GetUp(up, 'I');
+	char rotations[4] = { 'I', 'I', 'I', 'I' };
+	UpGenericRotation(rotations);
+	/*faces[BACK].GetUp(up, 'I');
 	faces[RIGHT].GetUp(right, 'I');
 	faces[FRONT].GetUp(down, 'I');
-	faces[LEFT].GetUp(left, 'I');
+	faces[LEFT].GetUp(left, 'I');*/
 
-	faces[BACK].ReplaceUp(left, 'I');
-	faces[RIGHT].ReplaceUp(up, 'I');
-	faces[FRONT].ReplaceUp(right, 'I');
-	faces[LEFT].ReplaceUp(down, 'I');
+	faces[BACK].SetUp(left, 'I');
+	faces[RIGHT].SetUp(up, 'I');
+	faces[FRONT].SetUp(right, 'I');
+	faces[LEFT].SetUp(down, 'I');
 }
 
 void Cube::UpInverted()
 {
-	inverted(UP);
+	Inverted(UP);
 
-	faces[BACK].GetUp(up, 'C');
+	char rotations[4] = { 'C', 'C', 'C', 'C' };
+	UpGenericRotation(rotations);
+	/*faces[BACK].GetUp(up, 'C');
 	faces[RIGHT].GetUp(right, 'C');
 	faces[FRONT].GetUp(down, 'C');
-	faces[LEFT].GetUp(left, 'C');
+	faces[LEFT].GetUp(left, 'C');*/
 
-	faces[BACK].ReplaceUp(right, 'C');
-	faces[RIGHT].ReplaceUp(down, 'C');
-	faces[FRONT].ReplaceUp(left, 'C');
-	faces[LEFT].ReplaceUp(up, 'C');
+	faces[BACK].SetUp(right, 'C');
+	faces[RIGHT].SetUp(down, 'C');
+	faces[FRONT].SetUp(left, 'C');
+	faces[LEFT].SetUp(up, 'C');
 }
 
 void Cube::DownClockwise()
 {
-	clockwise(DOWN);
+	Clockwise(DOWN);
 
-	faces[FRONT].GetDown(up, 'C');
+	char rotations[4] = { 'C', 'C', 'C', 'C' };
+	DownGenericRotation(rotations);
+	/*faces[FRONT].GetDown(up, 'C');
 	faces[RIGHT].GetDown(right, 'C');
 	faces[BACK].GetDown(down, 'C');
-	faces[LEFT].GetDown(left, 'C');
+	faces[LEFT].GetDown(left, 'C');*/
 
-	faces[FRONT].ReplaceDown(left, 'C');
-	faces[RIGHT].ReplaceDown(up, 'C');
-	faces[BACK].ReplaceDown(right, 'C');
-	faces[LEFT].ReplaceDown(down, 'C');
+	faces[FRONT].SetDown(left, 'C');
+	faces[RIGHT].SetDown(up, 'C');
+	faces[BACK].SetDown(right, 'C');
+	faces[LEFT].SetDown(down, 'C');
 }
 
 void Cube::DownInverted()
 {
-	inverted(DOWN);
+	Inverted(DOWN);
 
-	faces[FRONT].GetDown(up, 'I');
+	char rotations[4] = { 'I', 'I', 'I', 'I' };
+	DownGenericRotation(rotations);
+	/*faces[FRONT].GetDown(up, 'I');
 	faces[RIGHT].GetDown(right, 'I');
 	faces[BACK].GetDown(down, 'I');
-	faces[LEFT].GetDown(left, 'I');
+	faces[LEFT].GetDown(left, 'I');*/
 
-	faces[FRONT].ReplaceDown(right, 'I');
-	faces[RIGHT].ReplaceDown(down, 'I');
-	faces[BACK].ReplaceDown(left, 'I');
-	faces[LEFT].ReplaceDown(up, 'I');
+	faces[FRONT].SetDown(right, 'I');
+	faces[RIGHT].SetDown(down, 'I');
+	faces[BACK].SetDown(left, 'I');
+	faces[LEFT].SetDown(up, 'I');
 }
 
 void Cube::main()
@@ -269,29 +293,77 @@ void Cube::main()
 
 }
 
-void Cube::clockwise(int face)
+void Cube::Clockwise(int face)
 {
 	faces[face].GetUp(up, 'C');
 	faces[face].GetRight(right, 'C');
 	faces[face].GetDown(down, 'I');
 	faces[face].GetLeft(left, 'I');
 
-	faces[face].ReplaceUp(left, 'C');
-	faces[face].ReplaceRight(up, 'C');
-	faces[face].ReplaceDown(right, 'I');
-	faces[face].ReplaceLeft(down, 'I');
+	faces[face].SetUp(left, 'C');
+	faces[face].SetRight(up, 'C');
+	faces[face].SetDown(right, 'I');
+	faces[face].SetLeft(down, 'I');
 }
 
-void Cube::inverted(int face)
+void Cube::Inverted(int face)
 {
 	faces[face].GetUp(up, 'I');
 	faces[face].GetRight(right, 'I');
 	faces[face].GetDown(down, 'C');
 	faces[face].GetLeft(left, 'C');
 
-	faces[face].ReplaceUp(right, 'I');
-	faces[face].ReplaceRight(down, 'I');
-	faces[face].ReplaceDown(left, 'C');
-	faces[face].ReplaceLeft(up, 'C');
+	faces[face].SetUp(right, 'I');
+	faces[face].SetRight(down, 'I');
+	faces[face].SetDown(left, 'C');
+	faces[face].SetLeft(up, 'C');
+}
+
+void Cube::LeftGenericRotation(char rotations[4])
+{
+	faces[UP].GetLeft(up, rotations[0]);
+	faces[FRONT].GetLeft(right, rotations[1]);
+	faces[DOWN].GetLeft(down, rotations[2]);
+	faces[BACK].GetRight(left, rotations[3]);
+}
+
+void Cube::FrontGenericRotation(char rotations[4])
+{
+	faces[UP].GetDown(up, rotations[0]);
+	faces[RIGHT].GetLeft(right, rotations[1]);
+	faces[DOWN].GetUp(down, rotations[2]);
+	faces[LEFT].GetRight(left, rotations[3]);
+}
+
+void Cube::RightGenericRotation(char rotations[4])
+{
+	faces[UP].GetRight(up, rotations[0]);
+	faces[BACK].GetLeft(right, rotations[1]);
+	faces[DOWN].GetRight(down, rotations[2]);
+	faces[FRONT].GetRight(left, rotations[3]);
+}
+
+void Cube::BackGenericRotation(char rotations[4])
+{
+	faces[UP].GetUp(up, rotations[0]);
+	faces[LEFT].GetLeft(right, rotations[1]);
+	faces[DOWN].GetDown(down, rotations[2]);
+	faces[RIGHT].GetRight(left, rotations[3]);
+}
+
+void Cube::UpGenericRotation(char rotations[4])
+{
+	faces[BACK].GetUp(up, rotations[0]);
+	faces[RIGHT].GetUp(right, rotations[1]);
+	faces[FRONT].GetUp(down, rotations[2]);
+	faces[LEFT].GetUp(left, rotations[3]);
+}
+
+void Cube::DownGenericRotation(char rotations[4])
+{
+	faces[FRONT].GetDown(up, rotations[0]);
+	faces[RIGHT].GetDown(right, rotations[1]);
+	faces[BACK].GetDown(down, rotations[2]);
+	faces[LEFT].GetDown(left, rotations[3]);
 }
 

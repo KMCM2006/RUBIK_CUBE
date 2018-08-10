@@ -40,7 +40,7 @@ Face::~Face()
 {
 }
 
-void Face::ReplaceUp(char sticker[3], char rotation)
+void Face::SetUp(char sticker[3], char rotation)
 {
 	if (rotation == 'C')
 	{
@@ -56,7 +56,7 @@ void Face::ReplaceUp(char sticker[3], char rotation)
 	}
 }
 
-void Face::ReplaceDown(char sticker[3], char rotation)
+void Face::SetDown(char sticker[3], char rotation)
 {
 	if (rotation == 'C')
 	{
@@ -72,7 +72,7 @@ void Face::ReplaceDown(char sticker[3], char rotation)
 	}
 }
 
-void Face::ReplaceLeft(char sticker[3], char rotation)
+void Face::SetLeft(char sticker[3], char rotation)
 {
 	if (rotation == 'C')
 	{
@@ -88,7 +88,7 @@ void Face::ReplaceLeft(char sticker[3], char rotation)
 	}
 }
 
-void Face::ReplaceRight(char sticker[3], char rotation)
+void Face::SetRight(char sticker[3], char rotation)
 {
 	if (rotation == 'C')
 	{

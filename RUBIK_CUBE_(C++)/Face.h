@@ -8,10 +8,10 @@ class Face
 public:
 	Face(Color color, short position_x, short position_y);
 	~Face();
-	void ReplaceUp(char sticker[3], char rotation);
-	void ReplaceDown(char sticker[3], char rotation);
-	void ReplaceLeft(char sticker[3], char rotation);
-	void ReplaceRight(char sticker[3], char rotation);
+	void SetUp(char sticker[3], char rotation);
+	void SetDown(char sticker[3], char rotation);
+	void SetLeft(char sticker[3], char rotation);
+	void SetRight(char sticker[3], char rotation);
 	void ShowFace();
 	void GetUp(char sticker[3], char rotation);
 	void GetDown(char sticker[3], char rotation);
